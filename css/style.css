@@ -1,0 +1,173 @@
+/* Start Globle Rules */
+:root {
+    --title-color: hsl(234, 12%, 34%); 
+    --text-color: hsl(229, 6%, 66%);
+}
+html {
+    scroll-behavior: smooth;
+}
+* {
+    box-sizing: border-box;
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/* End Globle Rules */
+
+
+
+/* Page Style */
+body {
+    background-color: hsl(0, 0%, 98%);
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    margin: 0;
+    min-height: 100vh;
+}
+.intro {
+    z-index: 100;
+    position: relative;
+    text-align: center;
+    padding-top: 90px;
+}
+.intro h2 {
+    color: hsl(234, 12%, 34%);
+    font-weight: 200;
+    font-size: 35px;
+    margin-top: 0;
+}
+.intro h2 span {
+    display: inline-block;
+    font-size: 1.04em;
+    font-weight: 600;
+}
+.intro p {
+    width: 500px;
+    margin: auto;
+    color: hsl(229, 6%, 66%);
+    margin-bottom: 0;
+}
+@media (max-width:767px) {
+    .intro h2 {
+        font-size: 25px;
+    }
+    .intro h2 span {
+        font-size: 1em;
+    }
+    .intro p {
+        width: 300px;
+    }
+}
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(350px, 1fr)) ;
+    gap: 20px ;
+    padding-top: 200px;
+    padding-bottom: 30px;
+}
+
+.projects .project {
+    background-color: white;
+    width: 350px;
+    padding: 30px;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    box-shadow: 0px 0px 8px #b4c7d5;
+    position: relative;
+    z-index: 1000;
+    overflow-x: hidden;
+}
+
+.projects .project.two {
+    top: -150px;
+}
+.projects .project.four {
+    grid-column: 2;
+    top: -135px;
+}
+@media (max-width:767px) {
+    .projects {
+        padding-top: 40px;
+        padding-bottom: 90px;
+        gap: 25px;
+    }
+    .projects .project.two,
+    .projects .project.four {
+        top: initial;
+    }
+    .projects .project.four {
+        grid-column-start: 1;
+        grid-column-end: 0;
+
+    }
+}
+.projects .project::before {
+    content: "";
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: .5s ;
+    -webkit-transition: .5s ;
+    -moz-transition: .5s ;
+    -ms-transition: .5s ;
+    -o-transition: .5s ;
+}
+.projects .project.one::before {
+    background-color: hsl(180, 62%, 55%);
+} 
+.projects .project.two::before {
+    background-color: hsl(0, 78%, 62%);
+} 
+.projects .project.three::before {
+    background-color: hsl(212, 86%, 64%);
+} 
+.projects .project.four::before {
+    background-color: hsl(34, 97%, 64%);
+} 
+.project h3 {
+    color: var(--title-color);
+    margin: 0;
+}
+.project p {
+    line-height: 1.6;
+    color: var(--text-color);
+    font-size: 14px;
+    margin-bottom: 45px;
+}
+.project img {
+    display: block;
+    margin-left: auto;
+}
+@media (max-width:767px) {
+    .project p {
+        font-size: 15px;
+        margin-top: 5px;
+        margin-bottom: 25px;
+    }
+}
